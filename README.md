@@ -16,7 +16,7 @@ PostgreSQL est installée sur un serveur dédié.
 Pour qu'AdonisJS fonctionne, un fichier .env, envoyé dans les livrables doit être ajouté à la racine du serveur AdonisJS.
 ## Architecture
 
-#### Côté serveur -> /
+#### Côté serveur -> "P7_Groupomania/"
 
 - /app -> Logique de l'application (Controllers, Middlewares, Models...)
 - /commands -> Contient les commandes CLI
@@ -27,7 +27,7 @@ Pour qu'AdonisJS fonctionne, un fichier .env, envoyé dans les livrables doit ê
 - /start -> Déclaration des routes et des middlewares
 - /tests -> Fichiers de tests unitaires
 
-#### Côté client -> /client
+#### Côté client -> "P7_Groupomania/client"
 
 - /lib -> Scripts s'exécutant en dehors de l'application
 - /public -> Contient les medias (img, svg...)
