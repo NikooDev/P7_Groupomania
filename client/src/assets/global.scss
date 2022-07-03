@@ -1,0 +1,140 @@
+/**
+GLOBAL.SCSS
+ */
+
+@import "@szhsin/react-menu/dist/index.css";
+@import "@szhsin/react-menu/dist/transitions/slide.css";
+@import "cropperjs/dist/cropper.css";
+@import "tippy.js/dist/tippy.css";
+@import "tippy.js/animations/shift-toward.css";
+
+// Dropdown hover
+.szh-menu__item span, .szh-menu__item a {
+	transition: color .3s var(--transition-cubic);
+}
+.szh-menu__item--hover {
+	background-color: var(--background-body);
+	& span, & a {
+		color: var(--text-color-primary);
+	}
+}
+
+// Scrollbar
+.os-scrollbar-vertical {
+	right: .5rem !important;
+}
+.os-theme-dark > .os-scrollbar-vertical, .os-theme-light > .os-scrollbar-vertical {
+	width: 12px !important;
+}
+
+// Modal
+.swal2-modal {
+	border-radius: 15px !important;
+}
+.swal2-html-container {
+	margin: 0 !important;
+}
+.swal2-styled {
+	border-radius: 30px !important;
+}
+.swal2-title {
+	font-size: 1.5rem !important;
+}
+.swal2-popup {
+	padding: 0 !important;
+}
+.swal2-actions {
+	margin-bottom: 1rem !important;
+}
+.swal2-styled.swal2-confirm {
+	background-color: var(--color-secondary) !important;
+	transition: background-color 0.2s var(--transition-cubic), box-shadow .1s var(--transition-cubic) !important;
+	color: #fff !important;
+	font-weight: 600;
+	&:focus {
+		box-shadow: 0 0 0 3px rgba(112, 102, 224, .5) !important;
+	}
+	&:hover {
+		background-color: #514885 !important;
+	}
+}
+.swal2-styled.swal2-cancel {
+	color: #6e7881 !important;
+	font-weight: 600;
+	background: transparent !important;
+	transition: background-color .2s var(--transition-cubic) !important;
+	&:hover {
+		background: rgba(110, 120, 129, 0.1) !important;
+	}
+	&:focus {
+		box-shadow: none !important;
+	}
+}
+
+// Cropper
+.cropper-modal {
+	background: none;
+}
+.cropper-view-box {
+	background: rgba(0, 0, 0, .3);
+	border-radius: 100%;
+	outline: none;
+}
+.cropper-container img {
+	opacity: .6 !important;
+}
+.cropper-face {
+	border-radius: 100%;
+}
+
+//404 page
+.error404 h2, .error404 p, .title404::after, .title404::before {
+	color: #253237;
+}
+.title404 {
+	font-size: 5rem;
+	color: transparent;
+}
+.title404::before, .title404::after {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.title404::before {
+	clip-path: polygon(0 0, 60% 0, 30% 100%, 0 100%);
+	left: -0.15em;
+	transform: rotate(-5deg);
+	top: -0.05em;
+}
+
+.title404::after {
+	clip-path: polygon(60% 0, 100% 0, 100% 100%, 30% 100%);
+	left: 0.15em;
+	transform: rotate(5deg);
+	top: 0.05em;
+}
+
+// Animate notifications
+@keyframes fadeInRight {
+	from {
+		opacity: 0;
+		transform: translate3d(100%, 0, 0);
+	}
+
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes fadeOutRight {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+		transform: translate3d(100%, 0, 0);
+	}
+}

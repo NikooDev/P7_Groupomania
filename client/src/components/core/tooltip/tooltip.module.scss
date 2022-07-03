@@ -1,0 +1,13 @@
+.tooltip {
+	background-color: rgba(0, 0, 0, .8);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+	border-radius: 10px;
+	padding: .1rem .2rem;
+	& div {
+		font-size: .85rem;
+		font-family: var(--font-raleway);
+		font-weight: 600;
+		white-space: nowrap;
+		color: #fff!important;
+	}
+}

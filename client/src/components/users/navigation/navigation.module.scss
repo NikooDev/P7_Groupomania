@@ -1,0 +1,46 @@
+@import "./../../../assets/utils/mixins";
+
+.navigation {
+	background-color: #47406b;
+	box-shadow: 5px 0 10px rgba(0, 0, 0, .25);
+	transition: transform .5s var(--transition-cubic);
+	@include media('Lg') {
+		transform: translateX(-100%);
+	}
+	&__logo {
+		background-color: #6a6191;
+		transition: background-color .3s var(--transition-cubic);
+		&:hover {
+			background-color: #867bb2;
+		}
+	}
+	&__menu {
+		& li:first-child {
+			& svg {
+				left: 1px;
+				position: relative;
+			}
+		}
+		&__link {
+			background-color: rgba(255, 255, 255, 0.2);
+			border: 1.5px solid #47406b;
+			color: rgba(255, 255, 255, 0.5);
+			transition: color .3s var(--transition-cubic), border .3s linear, transform .2s var(--transition-cubic);
+			&:hover, &.active {
+				color: rgba(255, 255, 255, 0.85);
+				transform: scale(1.2);
+			}
+			&.active {
+				border: 1.5px solid rgba(255, 255, 255, 0.5);
+			}
+			& img {
+				height: 100%;
+				width: 100%;
+			}
+		}
+	}
+}
+
+:global(.showMenu) .navigation {
+	transform: translateX(0)
+}

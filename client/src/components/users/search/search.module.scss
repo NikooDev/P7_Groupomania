@@ -1,0 +1,57 @@
+@import "./../../../assets/utils/mixins";
+
+.search {
+	@include media('Lg') {
+		width: 40%;
+	}
+	@include media('Md') {
+		width: auto;
+	}
+	&__wrapper {
+		width: 22rem;
+		font-family: var(--font-quicksand);
+		display: flex;
+		@include media('Lg') {
+			width: 100%;
+		}
+		@include media('Md') {
+			display: none;
+			&.show {
+				display: flex;
+				position: absolute;
+				top: 4.5rem;
+				left: 0;
+				background-color: #fff;
+				box-shadow: 0 0 7px rgba(0, 0, 0, .25);
+				border-radius: 0;
+			}
+		}
+	}
+	&, & input {
+		background: var(--background-body);
+		@include media('Md') {
+			background-color: #fff;
+		}
+	}
+	& svg {
+		color: #76838f;
+	}
+	& input {
+		&::placeholder {
+			color: #76838f;
+		}
+	}
+}
+.searchMobile {
+	background-color: var(--color-secondary);
+	color: #fff;
+	height: 2.875rem;
+	width: 2.875rem;
+	display: none;
+	& svg {
+		color: #fff;
+	}
+	@include media('Md') {
+		display: flex;
+	}
+}

@@ -1,0 +1,100 @@
+.composer {
+	position: relative;
+	z-index: 35;
+	&__overlay {
+		background-color: #000;
+	}
+	&__wrapper {
+		min-height: 8.05rem;
+	}
+	&__title {
+		font-size: .9rem;
+		color: var(--text-color-primary);
+	}
+	&__avatar {
+		height: 46px;
+		color: #605699;
+		& span:first-child {
+			margin-left: 1rem;
+		}
+	}
+	&__scrollbar {
+		min-height: 2rem;
+		max-height: 8rem;
+	}
+	&__upload {
+		background-color: #fff;
+		& span {
+			position: relative!important;
+		}
+		& img {
+			position: relative!important;
+			object-fit: cover;
+			height: 100%!important;
+			width: 100%!important;
+		}
+		&__scrollbar {
+			min-height: 10rem;
+			max-height: 25rem;
+		}
+		&__description {
+			background-color: rgba(0, 0, 0, .5);
+			& input {
+				background-color: transparent;
+				color: #fff;
+				&::placeholder {
+					color: rgba(255, 255, 255, .8);
+				}
+				&:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:active, &:-webkit-autofill:focus {
+					transition: background-color 5000s ease-in-out 0s;
+					-webkit-text-fill-color: #fff !important;
+				}
+			}
+		}
+		&__actions {
+			color: #fff;
+		}
+	}
+	&__textarea {
+		position: relative;
+		font-size: 1.15rem;
+	}
+	&__divider::after {
+		content: "";
+		height: 2px;
+		width: 100%;
+		display: flex;
+		position: absolute;
+		margin: .5rem 0;
+		background-color: var(--background-body);
+	}
+	&__actions {
+		margin-top: .3rem;
+		&__submit {
+			background-color: #605699;
+			color: #fff;
+			font-weight: 600;
+			border-radius: 30px;
+			white-space: nowrap;
+			font-size: 1rem;
+			transition: background-color .15s ease-in-out, transform .1s ease-in-out, width .2s ease-in-out;
+			&:hover {
+				background-color: #433c72;
+				cursor: pointer;
+			}
+			&:active {
+				transform: scale(.9);
+			}
+			&:disabled {
+				transform: none;
+				cursor: default;
+			}
+			&.load {
+				width: 8.5rem;
+			}
+			&.updateLoad {
+				width: 9rem;
+			}
+		}
+	}
+}

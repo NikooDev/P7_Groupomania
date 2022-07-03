@@ -1,0 +1,119 @@
+@import "./../../assets/utils/mixins";
+
+.auth {
+	height: 100vh;
+	@include media('Md') {
+		height: 90vh;
+	}
+	&__container {
+		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+		width: 70rem;
+		min-height: 35rem;
+		border-radius: 15px;
+		@include media('Md') {
+			border-radius: 0;
+		}
+	}
+	&__logo {
+		top: -2.5rem;
+		width: 5rem;
+		height: 5rem;
+		& img {
+			width: inherit;
+			height: inherit;
+		}
+	}
+	&__overlay {
+		transition: transform .5s var(--transition-cubic), border-radius .5s var(--transition-cubic);
+		@include media('Md') {
+			display: none;
+		}
+		&__container {
+			background: var(--color-secondary) linear-gradient(to right, var(--color-primary), var(--color-tertiary)) no-repeat 0 0;
+			background-size: cover;
+			color: #fff;
+			left: -100%;
+			width: 200%;
+			transform: translateX(0);
+			transition: transform .5s var(--transition-cubic);
+		}
+		&__panel {
+			font-family: var(--font-raleway);
+			transform: translateX(0);
+			transition: transform .5s var(--transition-cubic);
+			& button {
+				height: 2.5rem;
+				color: var(--color-secondary);
+				font-size: .9rem;
+				transition: transform .080s ease-in;
+				&:active {
+					transform: scale(.9);
+				}
+			}
+			&.left {
+				transform: translateX(-20%);
+			}
+			&.right {
+				right: 0;
+				transform: translateX(0);
+				& h1 {
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+	&__container &__overlay {
+		border-radius: 0 15px 15px 0;
+	}
+	&__container.right &__overlay {
+		border-radius: 15px 0 0 15px;
+	}
+	&__container.right &__overlay {
+		transform: translateX(-100%);
+	}
+	&__container.right &__overlay__container {
+		transform: translateX(50%);
+	}
+	&__container.right &__overlay__panel.left {
+		transform: translateX(0);
+	}
+	&__container.right &__overlay__panel.right {
+		transform: translateX(20%);
+	}
+	&__signup, &__login {
+		transition: all .5s var(--transition-cubic);
+		width: 50%;
+		@include media('Md') {
+			width: 100%;
+		}
+	}
+	&__container.right &__signup {
+		transform: translateX(100%);
+		opacity: 1;
+		z-index: 30;
+		animation: show .5s var(--transition-cubic);
+	}
+	&__container.right &__login {
+		transform: translateX(100%);
+	}
+	@include media('Md') {
+		&__container.right &__signup {
+			transform: translateX(0);
+			animation: none;
+		}
+		&__container.right &__login {
+			transform: translateX(-100%);
+		}
+	}
+}
+
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 10;
+	}
+	50%, 100% {
+		opacity: 1;
+		z-index: 30;
+	}
+}

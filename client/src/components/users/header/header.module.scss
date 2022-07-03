@@ -1,0 +1,80 @@
+@import "./../../../assets/utils/mixins";
+
+.header {
+	box-shadow: 0 0 7px rgba(0, 0, 0, .25);
+	transition: padding-left .5s var(--transition-cubic);
+	padding-left: 6rem;
+	@include media('Lg') {
+		padding-left: 0;
+	}
+	&__mobile {
+		display: none;
+		@include media('Lg') {
+			display: flex;
+		}
+		&__toggle {
+			background-color: var(--color-secondary);
+			color: #fff;
+			height: 2.875rem;
+			width: 2.875rem;
+		}
+	}
+	&__breakpointBtn {
+		display: flex;
+		@media screen and (max-width: 1000px) {
+			display: none;
+		}
+	}
+	&__nav {
+		& li:first-child {
+			@include media('Md') {
+				margin-left: 0;
+			}
+		}
+		& li:last-child {
+			@include media('Lg') {
+				margin-right: .5rem;
+			}
+		}
+		& li:last-child button svg {
+			display: flex;
+		}
+		&__avatar {
+			height: 2.875rem;
+			width: 2.875rem;
+		}
+		& button {
+			background-color: var(--color-secondary);
+			height: 2.875rem;
+			width: 2.875rem;
+			color: #fff;
+			transition: width .3s ease-in-out;
+			@include media('Md') {
+				width: 2.875rem!important;
+			}
+			& span {
+				white-space: nowrap;
+				@include media('Md') {
+					display: none;
+				}
+			}
+			& .btnAvatar {
+				border: 3px solid #fff;
+				width: 52px;
+				height: 52px;
+				left: -3px;
+				@include media('Md') {
+					border: none;
+					left: 0;
+				}
+			}
+		}
+	}
+}
+
+:global(.swal2-shown) .header {
+	padding-right: 15px;
+	@include media('Sm') {
+		padding-right: 0;
+	}
+}

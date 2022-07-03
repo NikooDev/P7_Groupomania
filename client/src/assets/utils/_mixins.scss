@@ -1,0 +1,46 @@
+/**
+MIXINS.SCSS
+ */
+
+@import "variables";
+
+// Responsive
+@mixin media($breakpoint) { // lg: Laptop - Desktop | md: Tablet | sm: Tablet ~ Mobile | xs: Mobile
+	@media (max-width: map-get($breakpoints, $breakpoint)) {
+		@if( $breakpoint == Lg or $breakpoint == Md or $breakpoint == Sm or $breakpoint == Xs ) {
+			@content;
+		} @else {
+			@error(#{$breakpoint}+' is an invalid value. Accepted value: Lg | Md | Sm | Xs')
+		}
+	}
+}
+
+// Margins
+@mixin margins($margin, $value){
+	@if( $margin == 't' ) {margin-top: $value;}
+	@else if( $margin == 'l' ) {margin-left: $value;}
+	@else if( $margin == 'b' ) {margin-bottom: $value;}
+	@else if( $margin == 'r' ) {margin-right: $value;}
+}
+
+// Paddings
+@mixin paddings($padding, $value){
+	@if( $padding == 't' ) {padding-top: $value;}
+	@else if( $padding == 'l' ) {padding-left: $value;}
+	@else if( $padding == 'b' ) {padding-bottom: $value;}
+	@else if( $padding == 'r' ) {padding-right: $value;}
+}
+
+// Positions
+@mixin positions($position, $value) {
+	@if ( $position == 't' ) {top: $value;}
+	@else if ( $position == 'l' ) {left: $value;}
+	@else if ( $position == 'r' ) {right: $value;}
+	@else if ( $position == 'b' ) {bottom: $value;}
+}
+
+// Width - Height
+@mixin sizes($size, $value) {
+	@if ( $size == 'h' ) {height: $value;}
+	@else if ( $size == 'w' ) {width: $value;}
+}

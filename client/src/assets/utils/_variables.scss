@@ -1,0 +1,27 @@
+/**
+VARIABLES.SCSS
+ */
+
+// Breakpoints
+$breakpoints: (
+	Lg: 58em, // Laptop - Desktop
+	Md: 48em, // Tablet
+	Sm: 33.125em, // Mobile : width iphone 12 Pro
+	Xs: 23.4375em // Mobile : width iphone 6 / 7 / 8
+);
+
+// Variables
+$positions: ('Relative': relative, 'Absolute': absolute, 'Fixed': fixed, 'Sticky': sticky, 'Inherit': inherit);
+$displays: ('None': none, 'Block': block, 'InlineBlock': inline-block, 'Flex': flex, 'InlineFlex': inline-flex, 'Inline': inline, 'Inherit': inherit);
+$fDirections: ('Row': row, 'RowReverse': row-reverse, 'Column': column, 'ColumnReverse': column-reverse, 'Inherit': inherit);
+$fGrows: ('1': 1, '2': 2, '3': 3, 'Inherit': inherit);
+$fBasiss: ('0': 0, 'Auto': auto, 'Inherit': inherit);
+$fShrinks: ('0': 0, '1': 1, 'Inherit': inherit);
+$fWraps: ('Nowrap': nowrap, 'Wrap': wrap, 'WrapReverse': wrap-reverse, 'Inherit': inherit);
+$aItems: ('FlexStart': flex-start, 'Stretch': stretch, 'Center': center, 'FlexEnd': flex-end, 'Inherit': inherit);
+$aContents: ('Start': start, 'Center': center, 'SpaceBetween': space-between, 'SpaceAround': space-around, 'Inherit': inherit);
+$jItems: ('Start': start, 'Stretch': stretch, 'Center': center, 'End': end);
+$jContents: ('Start': start, 'Stretch': stretch, 'Center': center, 'End': end, 'SpaceBetween': space-between, 'SpaceAround': space-around, 'SpaceEvenly': space-evenly, 'Inherit': inherit);
+$textAligns: ('Left': left, 'Center': center, 'Right': right, 'Justify': justify);
+$overflows: ('Hidden': hidden, 'Visible': visible, 'Inherit': inherit);
+$radius: ('0': 0, '15': 15px, '30': 30px, '50p': 50%);

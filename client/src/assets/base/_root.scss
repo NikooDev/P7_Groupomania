@@ -1,0 +1,21 @@
+/**
+ROOT.SCSS
+ */
+
+:root {
+	--background-body: #f0f2f5;
+	--background-header: #fff;
+	--color-primary: #bba0ed;
+	--color-secondary: #605699;
+	--color-tertiary: #423d7e;
+	--text-color-primary: #212529;
+	--text-color-secondary: #282d33;
+	--text-color-tertiary: #343a41;
+	--font-family: system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+	--font-raleway: "Raleway", var(--font-family);
+	--transition-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.darkmode {
+	--background-body: #0f1113;
+}

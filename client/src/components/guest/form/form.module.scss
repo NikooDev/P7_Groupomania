@@ -1,0 +1,80 @@
+@import "./../../../assets/utils/mixins";
+
+.form {
+	font-family: var(--font-raleway);
+	border-radius: 15px;
+	padding: 0 3rem;
+	@include media('Md') {
+		border-radius: 0;
+		padding: 0 1.5rem;
+	}
+	&__icon {
+		left: 1rem;
+	}
+	&__input {
+		background-color: var(--background-body);
+		border: 2px solid var(--background-body);
+		font-size: 1.15rem;
+		height: 3.3rem;
+		transition: border .3s var(--transition-cubic);
+		&:-webkit-autofill {
+			background-color: var(--background-body);
+			box-shadow: inset 0 0 0 10rem var(--background-body);
+		}
+		&::placeholder {
+			color: #76838f;
+		}
+		&:disabled:-webkit-autofill {
+			-webkit-text-fill-color: #76838f;
+		}
+		&:disabled {
+			color: #76838f;
+		}
+		&.error {
+			border: 2px solid #df5c5c;
+		}
+	}
+	&__group {
+		input {
+			text-transform: capitalize;
+		}
+		input:first-child, input:last-child {
+			width: 49%;
+		}
+	}
+	&__link {
+		&:hover {
+			text-decoration: underline;
+		}
+		&__mobile {
+			display: none;
+			@include media('Md') {
+				display: flex;
+			}
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	&__submit {
+		background: var(--color-secondary) linear-gradient(to right, var(--color-primary), var(--color-tertiary)) no-repeat 0 0;
+		color: #fff;
+		height: 3.3rem;
+		transition: width .3s ease-in-out, transform .080s ease-in, opacity .3s ease-in-out;
+		opacity: 1;
+		&:active {
+			transform: scale(.9);
+		}
+		&:disabled {
+			opacity: .7;
+			transform: none;
+			cursor: default;
+		}
+		&__text {
+			white-space: nowrap;
+		}
+		&__loading {
+			width: 3.3rem;
+		}
+	}
+}

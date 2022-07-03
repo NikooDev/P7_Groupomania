@@ -1,0 +1,112 @@
+@import "./../../../assets/utils/mixins";
+
+.action {
+	box-sizing: border-box;
+	width: auto;
+	margin: 1.25em auto 0;
+}
+.divider:after {
+	content: "";
+	height: 2px;
+	width: 100%;
+	display: flex;
+	position: absolute;
+	margin-top: .5rem;
+	background-color: var(--background-body);
+}
+.button {
+	padding: 0.625em 1.1em;
+	transition: box-shadow .1s;
+	box-shadow: 0 0 0 3px transparent;
+	font-weight: 500;
+	border: 0;
+	border-radius: 30px;
+	color: #fff;
+	font-size: 1rem;
+}
+.back {
+	margin-right: 5rem;
+	@include media('Lg') {
+		margin-right: 0;
+	}
+}
+.confirm {
+	background-color: var(--color-secondary);
+	transition: background-color .2s var(--transition-cubic);
+	color: #fff;
+	&:focus {
+		box-shadow: 0 0 0 3px rgba(112, 102, 224, .5);
+	}
+	&:hover {
+		background-color: #514885;
+	}
+}
+.cancel {
+	color: #6e7881;
+	transition: background-color .2s var(--transition-cubic);
+	&:hover {
+		background-color: rgba(110, 120, 129, 0.1);
+	}
+}
+.errorMsg {
+	color: #ea4747;
+	font-size: .95rem;
+}
+
+/**
+UPLOAD SWAL
+ */
+.uploadSwal {
+	& h2 {
+		font-size: 1.5rem;
+	}
+	& button {
+		border-radius: 30px;
+		font-weight: 600;
+	}
+	&.large {
+		width: 31.25rem !important;
+	}
+	&__error {
+		color: #ed4f4f;
+	}
+	&__showSwal {
+		animation: fadeInDown .3s var(--transition-cubic) both;
+	}
+	&__hideSwal {
+		animation: fadeOutUp .3s var(--transition-cubic) both;
+	}
+	&__loader {
+		& circle {
+			stroke: var(--color-secondary) !important;
+			stroke-width: 2 !important;
+		}
+		&__uploaded {
+			& circle {
+				stroke: #fff !important;
+				stroke-width: 2 !important;
+			}
+		}
+	}
+}
+
+@keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -20%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes fadeOutUp {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		transform: translate3d(0, -20%, 0);
+	}
+}

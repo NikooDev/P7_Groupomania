@@ -1,0 +1,109 @@
+.post {
+	&:hover &__photo img {
+		transform: scale(1.1);
+	}
+	&__header {
+		height: 46px;
+	}
+	&__avatar {
+		color: #605699;
+	}
+	&__actions {
+		color: #6e7881;
+		transition: background-color .15s var(--transition-cubic);
+		&:hover, &__active {
+			background-color: #e8eaee;
+		}
+		&__items {
+			line-height: 2.5;
+			& a, & li {
+				font-size: .9rem;
+				transition: background-color .15s var(--transition-cubic);
+				&:hover {
+					background-color: #f0f2f5;
+				}
+			}
+		}
+		&__deleteMessage {
+			font-size: 1rem;
+		}
+	}
+	&__dropdown {
+		box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+		width: 15rem;
+	}
+	&__infos {
+		line-height: 1.4;
+		& a {
+			font-size: .9rem;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		&__time {
+			font-size: .8rem;
+			color: #6e7881;
+		}
+	}
+	&__text {
+		white-space: pre-line;
+		font-size: 1.1rem;
+	}
+	&__photo {
+		background-color: #231d42;
+		&__title {
+			background-color: rgba(0, 0, 0, .5);
+			color: #fff;
+		}
+	}
+	&__photo img {
+		max-height: 35rem;
+		box-shadow: 0 0 15px rgba(0, 0, 0,.7);
+		transition: transform .3s ease-in-out;
+	}
+	&__divider::after {
+		content: "";
+		height: 2px;
+		width: 100%;
+		display: flex;
+		position: relative;
+		margin: 1rem 0 .5rem;
+		background-color: var(--background-body);
+	}
+	&__feedback {
+		& a {
+			border-radius: .5rem;
+			font-size: .9rem;
+			transition: background-color .15s var(--transition-cubic);
+			& svg {
+				position: relative;
+				top: -1px;
+			}
+			&:hover {
+				background-color: var(--background-body);
+			}
+			& span {
+				//font-family: var(--font-family);
+
+			}
+		}
+		&__filled svg {
+			fill: var(--color-secondary);
+		}
+		&__svgLoad svg.svgLike {
+			animation: scaleRotate .5s cubic-bezier(0.53, -0.52, 0.51, 1.52);
+		}
+	}
+	&__comments {
+
+	}
+}
+
+@keyframes scaleRotate {
+	0%, 100% {
+		transform: scale(1) rotate(0);
+	}
+	50% {
+		transform: scale(1.3) rotate(-7deg);
+	}
+}

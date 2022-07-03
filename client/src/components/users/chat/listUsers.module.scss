@@ -1,0 +1,19 @@
+@import "./../../../assets/utils/mixins";
+
+.listUsers {
+	background: linear-gradient(90deg, transparent, #b2b8c4);
+	display: flex;
+	@include media('Lg') {
+		display: none;
+	}
+	& ul li {
+		box-shadow: 0 0 10px rgba(0, 0, 0, .7);
+		border-radius: 100%;
+		color: #605699;
+		display: flex;
+	}
+	& ul li a {
+		background-color: #fff;
+		border-radius: 100%;
+	}
+}

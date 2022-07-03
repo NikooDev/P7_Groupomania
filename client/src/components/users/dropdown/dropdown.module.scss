@@ -1,0 +1,57 @@
+.dropdown {
+	width: 22.5rem;
+	&.large {
+		height: 30rem;
+	}
+}
+
+.settings {
+	&__avatar, &__avatar svg {
+		height: 4.5rem;
+		width: 4.5rem;
+	}
+	&__name {
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		width: 14.5rem;
+	}
+	&__textSubLink {
+		font-size: .9rem;
+	}
+	&__divider {
+		&::after {
+			content: "";
+			height: 2px;
+			width: 100%;
+			display: flex;
+			margin: .5rem 0;
+			background-color: var(--background-body);
+		}
+	}
+	&__item {
+		font-size: .9rem;
+		color: #545b6c;
+		&__icon {
+			height: 1.875rem;
+			width: 1.875rem;
+		}
+	}
+	&__updateUrl {
+		background-color: var(--background-body);
+		font-size: 1rem;
+		& input {
+			border: 2px solid transparent;
+			transition: border .15s var(--transition-cubic);
+		}
+		& input:focus {
+			border: 2px solid #bbc0cf;
+		}
+		&__remarque {
+			font-size: .9rem;
+		}
+		&__action {
+			margin-bottom: 1rem!important;
+			margin-top: 1rem!important;
+		}
+	}
+}

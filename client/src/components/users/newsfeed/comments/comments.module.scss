@@ -1,0 +1,42 @@
+.comments {
+	border-top: 2px solid var(--background-body);
+	& textarea {
+		background-color: var(--background-body);
+		padding: .35rem .7rem;
+		&.update {
+			background-color: #e2e4ea;
+		}
+	}
+	&__wrapper {
+		height: 36px;
+		width: 36px;
+		display: contents;
+	}
+	&__mr2 {
+		margin-right: .2rem;
+	}
+	&__content {
+		background-color: #f1f2f5;
+		padding: .35rem .7rem;
+		& span {
+			font-size: .85rem;
+		}
+		& p {
+			font-size: .9rem;
+			word-break: break-word;
+		}
+		& button {
+			top: 3px;
+		}
+		& a {
+			color: #1876f2;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		&__time {
+			color: #6e7881;
+			font-size: .78rem;
+		}
+	}
+}

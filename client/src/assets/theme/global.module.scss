@@ -1,0 +1,159 @@
+/**
+GLOBAL.MODULE.SCSS
+ */
+
+@use "sass:math";
+@import "../utils/variables";
+@import "../utils/mixins";
+
+// Positions => p
+@each $position, $i in $positions { .p#{$position} {position: $i;} }
+
+// Display => d
+@each $display, $i in $displays { .d#{$display} {display: $i;} }
+
+// Flex-direction => fd
+@each $fDirection, $i in $fDirections { .fd#{$fDirection} {flex-direction: $i;} }
+
+// Flex-grow => fg
+@each $fGrow, $i in $fGrows { .fg#{$fGrow} {flex-grow: $i;} }
+
+// Flex-basis => fb
+@each $fBasis, $i in $fBasiss { .fb#{$fBasis} {flex-basis: $i;} }
+
+// Flex-shrink => fs
+@each $fShrink, $i in $fShrinks { .fs#{$fShrink} {flex-shrink: $i;} }
+
+// Flex-wrap => fw
+@each $fWrap, $i in $fWraps { .fw#{$fWrap} {flex-wrap: $i;} }
+
+// Align-item => ai
+@each $aItem, $i in $aItems { .ai#{$aItem} {align-items: $i;} }
+
+// Align-content => ac
+@each $aContent, $i in $aContents { .ac#{$aContent} {align-content: $i;} }
+
+// Justify-items => ji
+@each $jItem, $i in $jItems { .ji#{$jItem} {justify-items: $i;} }
+
+// Justify-content => jc
+@each $jContent, $i in $jContents { .jc#{$jContent} {justify-content: $i;} }
+
+// Text-align => ta
+@each $textAlign, $i in $textAligns { .ta#{$textAlign} {text-align: $i;} }
+
+// Overflow => ov
+@each $overflow, $i in $overflows { .ov#{$overflow} {overflow: $i;} }
+
+// Border-radius => br
+.br100 { border-radius: 100%; }
+@each $radius, $i in $radius {
+	.brtl#{$radius} {border-top-left-radius: $i;}
+	.brtr#{$radius} {border-top-right-radius: $i;}
+	.brbl#{$radius} {border-bottom-left-radius: $i;}
+	.brbr#{$radius} {border-bottom-right-radius: $i;}
+}
+
+// Font-weight => fwe
+@for $i from 3 through 9 {
+	.fwe#{$i*100} {font-weight: $i*100;}
+}
+
+// Opacity => op
+@for $i from 0 through 10 {
+	.op#{$i} {opacity: $i/10;}
+}
+
+// Z-index => zi
+.zim1 {z-index: -1;}
+@for $i from 0 through 20 {
+	.zi#{$i*5} {z-index: $i*5;}
+}
+
+// Width / Height => w - h
+.w100vw {width: 100vw;}
+.h100vh {height: 100vh;}
+@for $i from 1 through 15 {
+	@each $position in h, w {
+		.#{$position+$i/2*10} {
+			@include sizes($position, math.div(1rem * $i, 2))
+		}
+	}
+}
+
+// Width / Heigth percent
+@for $i from 1 through 10 {
+	@each $position in h, w {
+		.#{$position+$i*10}p {
+			@include sizes($position, 10% * $i)
+		}
+	}
+}
+
+
+// Margins => mt - ml - mb - mr
+.mAuto {margin: auto;}
+.mxAuto {margin: 0 auto;}
+.mlAuto {margin-left: auto;}
+.mrAuto {margin-right: auto;}
+.mx0 {margin: 0;}
+@for $i from 0 through 10 {
+	@if( $i == 0 ) {
+		.mt0 {margin-top: 0;}
+		.ml0 {margin-left: 0;}
+		.mr0 {margin-right: 0;}
+		.mb0 {margin-bottom: 0;}
+	} @else {
+		@each $margin in t, l, b, r {
+			.m#{$margin+$i/2*10} {
+				@include margins($margin, math.div(1rem * $i, 2))
+			}
+		}
+	}
+}
+
+// Paddings => pt - pl - pb - pr
+.px0 {padding: 0;}
+@for $i from 0 through 12 {
+	@if( $i == 0 ) {
+		.pt0 {padding-top: 0;}
+		.pl0 {padding-left: 0;}
+		.pr0 {padding-right: 0;}
+		.pb0 {padding-bottom: 0;}
+	} @else {
+		@each $padding in t, l, b, r {
+			.p#{$padding+$i/2*10} {
+				@include paddings($padding, math.div(1rem * $i, 2))
+			}
+		}
+	}
+}
+
+// Positions => t - l - r - b
+.l50p {left: 50%;}
+@for $i from 0 through 10 {
+	@if( $i == 0 ) {
+		.t0 {top: 0;}
+		.l0 {left: 0;}
+		.r0 {right: 0;}
+		.b0 {bottom: 0;}
+	} @else {
+		@each $position in t, l, b, r {
+			.#{$position+$i/2*10} {
+				@include positions($position, math.div(1rem * $i, 2))
+			}
+		}
+	}
+}
+
+// Responsive display
+@each $hidden, $value in $breakpoints {
+	@media (max-width: $value) {
+		.d#{$hidden}None {
+			display: none;
+		}
+		.d#{$hidden}Flex {
+			display: flex;
+		}
+	}
+}

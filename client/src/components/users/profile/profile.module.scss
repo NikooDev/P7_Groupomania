@@ -1,0 +1,55 @@
+.profile {
+	&__avatar {
+		background-color: #fff;
+		color: #605699;
+		box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+	}
+	&__fullname {
+		font-size: 2rem;
+	}
+	&__container {
+		&__stream {
+			max-width: 50rem!important;
+		}
+	}
+	&__update {
+		& input {
+			background-color: var(--background-body);
+			padding: .7rem 1rem;
+			font-size: 1rem;
+		}
+		& a {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		&__button {
+			padding: 0.7rem 1.2rem;
+		}
+	}
+	&__delete {
+		padding-top: .7rem;
+		padding-bottom: .7rem;
+		font-size: 1rem;
+		transition: background-color .2s var(--transition-cubic), color .2s var(--transition-cubic);
+		&.btnDelete {
+			color: #df5c5c;
+			&:hover {
+				background-color: var(--background-body);
+			}
+		}
+		&__confirm {
+			color: #b64444;
+			font-size: 1rem;
+		}
+		&__btnConfirm {
+			background-color: #df5c5c;
+			&:hover {
+				background-color: #b64444;
+			}
+			&:focus {
+				box-shadow: 0 0 0 3px rgba(182, 68, 68, .5);
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+@import "./../../../assets/utils/mixins";
+
+.container {
+	max-width: 90rem;
+	margin: 0 auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	@include media('Lg') {
+		padding: 0;
+	}
+}
+.main {
+	margin: 7rem 0 0 6rem;
+	@include media('Lg') {
+		margin: 7rem 0 0 0;
+	}
+}
