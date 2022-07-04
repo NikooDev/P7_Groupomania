@@ -41,6 +41,8 @@ const Profile = (props: IUser) => {
 		setShowDelete(true)
 	}, [])
 
+	const handleFormSubmit = (event: React.FormEvent) => event.preventDefault()
+
 	const handleUpdateAvatar = (event: React.MouseEvent) => {
 		event.preventDefault()
 		setShowModalProfile(false)
@@ -131,7 +133,7 @@ const Profile = (props: IUser) => {
 				<Stream display="profile" profile_id={props.id} />
 			</Container>
 			<Modal title="Modifier le profil" show={showModalProfile} classname={m.uploadSwal} onClose={handleHideModalProfile}>
-				<form className={Class(g.dFlex, g.fdColumn, cl.profile__update)} autoComplete="off">
+				<form onSubmit={(event) => handleFormSubmit(event)} className={Class(g.dFlex, g.fdColumn, cl.profile__update)} autoComplete="off">
 					{ !showDelete ? <>
 						<div className={Class(g.pt10, g.pl10, g.pb10, g.pr10)}>
 						<div className={Class(g.dFlex, g.aiCenter, g.jcSpaceBetween, g.pt5, g.pl5, g.pb5, g.pr5)}>
