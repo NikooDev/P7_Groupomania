@@ -41,7 +41,10 @@ const Profile = (props: IUser) => {
 		setShowDelete(true)
 	}, [])
 
-	const handleFormSubmit = (event: React.FormEvent) => event.preventDefault()
+	const handleFormSubmit = (event: React.FormEvent) => {
+		event.preventDefault()
+		handleDeleteProfil()
+	}
 
 	const handleUpdateAvatar = (event: React.MouseEvent) => {
 		event.preventDefault()
@@ -91,8 +94,8 @@ const Profile = (props: IUser) => {
 	/**
 	 * Submit => Suppression du profil
 	 */
-	const handleDeleteProfil = async (event: React.MouseEvent) => {
-		event.preventDefault()
+	const handleDeleteProfil = async (event?: React.MouseEvent) => {
+		event && event.preventDefault()
 
 		if(user && updateProfile.confirm_delete === user.email) {
 			const res = await deleteUser(updateProfile)
